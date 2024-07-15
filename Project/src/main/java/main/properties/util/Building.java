@@ -1,8 +1,11 @@
-package main;
+package main.properties.util;
+
+import main.Property;
+import main.SmartDevice;
 
 import java.util.ArrayList;
 
-public class Building implements Property{
+public class Building implements Property {
 
     String address;
     private int numberBedrooms;
@@ -11,6 +14,8 @@ public class Building implements Property{
     //Between 1970-2024
     private int yearBuilt;
     private double currentValue;
+
+    public Type type;
 
     private ArrayList<SmartDevice> devices;
 
@@ -103,7 +108,7 @@ public class Building implements Property{
     }
 
 
-    enum Type {
+    public enum Type {
         Apartment,
         House,
         Townhouse

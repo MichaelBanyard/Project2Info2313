@@ -6,6 +6,7 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseButton;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
+import main.properties.util.Building;
 
 public class CityApplication extends Application {
 
