@@ -8,6 +8,9 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
 public class CityApplication extends Application {
+
+
+    static int clicks = 0;
     @Override
     public void start(Stage stage) {
 
@@ -23,7 +26,8 @@ public class CityApplication extends Application {
         Button b = new Button("Button of DOOM!");
         b.setOnMouseClicked((action -> {
             if(action.getButton() == MouseButton.PRIMARY) {
-                System.out.println("BOO!");
+                clicks++;
+                System.out.println("BOO " + clicks + "!");
             }
         }));
         root.setOnMouseMoved(event -> {
