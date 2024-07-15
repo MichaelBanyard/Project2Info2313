@@ -10,6 +10,11 @@ import javafx.stage.Stage;
 public class CityApplication extends Application {
     @Override
     public void start(Stage stage) {
+
+        Building building = new Building("123 Test Street", 3 , 3, 2000, 1000000.0);
+
+        System.out.println(building);
+
         StackPane root = new StackPane();
         Scene scene = new Scene(root);
         stage.setTitle("Hello!");
@@ -18,7 +23,7 @@ public class CityApplication extends Application {
         Button b = new Button("Button of DOOM!");
         b.setOnMouseClicked((action -> {
             if(action.getButton() == MouseButton.PRIMARY) {
-                System.out.println("Hello!");
+                System.out.println("BOO!");
             }
         }));
         root.setOnMouseMoved(event -> {
