@@ -1,7 +1,7 @@
 package main.properties.util;
 
 import main.Property;
-import main.devices.util.SmartDevice;
+import main.SmartDevice;
 
 import java.util.ArrayList;
 

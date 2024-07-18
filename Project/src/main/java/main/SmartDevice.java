@@ -1,7 +1,7 @@
-package main.devices.util;
+package main;
 
 public interface SmartDevice {
     void turnOn();
     void turnOff();
-    boolean isOn();
+    void isOn();
 }
