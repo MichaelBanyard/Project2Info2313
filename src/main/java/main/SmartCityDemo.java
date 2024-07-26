@@ -6,8 +6,6 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 import main.properties.util.Building;
 
-import java.util.ArrayList;
-
 public class SmartCityDemo extends Application {
 
     public Building[][] buildings = new Building[10][10];

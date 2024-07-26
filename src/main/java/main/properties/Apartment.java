@@ -13,7 +13,7 @@ public class Apartment extends Building {
 
     public Apartment(String address, int numberBedrooms, int numberBathrooms, int yearBuilt, double currentValue, ArrayList<SmartDevice> devices) {
         super(address, numberBedrooms, numberBathrooms, yearBuilt, currentValue, devices);
-        this.type = Type.Apartment;
+        this.type = Building.Type.Apartment;
     }
 
     public Apartment(String address, int numberBedrooms, int numberBathrooms, int yearBuilt, double currentValue, ArrayList<SmartDevice> devices, int complexNumber, int floorNumber, int apartmentNumber) {
