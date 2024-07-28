@@ -1,34 +1,31 @@
-package main.properties.util;
-
-import main.Property;
-import main.devices.util.SmartDevice;
+package smartcity.properties.util;
 
 import java.util.ArrayList;
+import com.gluonhq.maps.MapPoint;
+import smartcity.devices.util.SmartDevice;
 
 public class Building implements Property {
 
     String address;
     private int numberBedrooms;
     private int numberBathrooms;
-
-    //Between 1970-2024
     private int yearBuilt;
     private double currentValue;
-
     public Type type;
-
     private ArrayList<SmartDevice> devices;
-
-    public Building(String address, int numberBedrooms, int numberBathrooms, int yearBuilt, double currentValue, ArrayList<SmartDevice> devices){
+    private MapPoint mapPoint;
+    
+    public Building(String address, int numberBedrooms, int numberBathrooms, int yearBuilt, double currentValue, ArrayList<SmartDevice> devices, MapPoint mapPoint) throws Exception {
         this.setAddress(address);
         this.setNumberBedrooms(numberBedrooms);
         this.setNumberBathrooms(numberBathrooms);
         this.setYearBuilt(yearBuilt);
         this.setCurrentValue(currentValue);
         this.devices = devices;
+        this.mapPoint = mapPoint;
     }
 
-    public Building(String address, int numberBedrooms, int numberBathrooms, int yearBuilt, double currentValue){
+    public Building(String address, int numberBedrooms, int numberBathrooms, int yearBuilt, double currentValue) throws Exception{
         this.setAddress(address);
         this.setNumberBedrooms(numberBedrooms);
         this.setNumberBathrooms(numberBathrooms);
@@ -53,6 +50,16 @@ public class Building implements Property {
     public double calculatePropertyValue() {
         return 0;
     }
+    
+    @Override
+    public MapPoint getMapPoint() {
+        return mapPoint;
+    }
+
+    @Override
+    public void setMapPoint(MapPoint mapPoint) {
+        this.mapPoint = mapPoint;
+    }
 
     public String getAddress() {
         return address;
@@ -66,15 +73,22 @@ public class Building implements Property {
         return numberBedrooms;
     }
 
-    public void setNumberBedrooms(int numberBedrooms) {
-        this.numberBedrooms = numberBedrooms;
+    public void setNumberBedrooms(int numberBedrooms) throws Exception {
+    	if (numberBedrooms <= 0) {
+    		throw new Exception("Number of Bedrooms must be greater than zero.");
+    	}
+    	this.numberBedrooms = numberBedrooms;
+    		
     }
 
     public int getNumberBathrooms() {
         return numberBathrooms;
     }
 
-    public void setNumberBathrooms(int numberBathrooms) {
+    public void setNumberBathrooms(int numberBathrooms) throws Exception {
+    	if (numberBathrooms <= 0) {
+    		throw new Exception("Number of Bathrooms must be greater than zero.");
+    	}
         this.numberBathrooms = numberBathrooms;
     }
 
@@ -82,11 +96,9 @@ public class Building implements Property {
         return yearBuilt;
     }
 
-    public void setYearBuilt(int yearBuilt) {
-        if(yearBuilt < 1970 || yearBuilt > 2024){
-            this.yearBuilt = 1970;
-            System.out.println("Invalid built date " + yearBuilt + "! Set to 1970.");
-            return;
+    public void setYearBuilt(int yearBuilt) throws Exception {
+        if (yearBuilt < 1970 || yearBuilt > 2024) {
+            throw new Exception("Year built must be between 1970 and 2024.");
         }
         this.yearBuilt = yearBuilt;
     }
@@ -95,7 +107,10 @@ public class Building implements Property {
         return currentValue;
     }
 
-    public void setCurrentValue(double currentValue) {
+    public void setCurrentValue(double currentValue) throws Exception {
+    	if (currentValue <= 0) {
+    		throw new Exception("Number of currentValue must be greater than zero.");
+    	}
         this.currentValue = currentValue;
     }
 
@@ -122,6 +137,4 @@ public class Building implements Property {
                 "Built in: " + getYearBuilt() + ",\n" +
                 "Current Value: " + getCurrentValue() + "\n";
     }
-
-
 }

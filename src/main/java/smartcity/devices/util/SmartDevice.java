@@ -1,4 +1,4 @@
-package main.devices.util;
+package smartcity.devices.util;
 
 public interface SmartDevice {
     void turnOn();

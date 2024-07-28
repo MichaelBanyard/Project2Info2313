@@ -1,6 +1,6 @@
-package main.devices;
+package smartcity.devices;
 
-import main.devices.util.SmartDevice;
+import smartcity.devices.util.SmartDevice;
 
 public class SmartLight implements SmartDevice {
     private boolean enabled = false;

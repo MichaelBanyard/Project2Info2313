@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane fx:id="dialogPane" expanded="true" minHeight="-Infinity" minWidth="-Infinity"
+            xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="smartcity.controllers.addPropertyDialogController">
+    <content>
+        <VBox fx:id="comboBoxContainer" maxHeight="Infinity" maxWidth="Infinity" minHeight="-Infinity" minWidth="0.0"
+              VBox.vgrow="ALWAYS">
+            <padding>
+                <Insets left="20.0" right="20.0"/>
+            </padding>
+            <GridPane fx:id="gridPane" vgap="10.0" VBox.vgrow="ALWAYS">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="SOMETIMES"/>
+                    <ColumnConstraints hgrow="SOMETIMES"/>
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER"/>
+                    <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="NEVER"/>
+                    <RowConstraints minHeight="10.0" vgrow="NEVER"/>
+                </rowConstraints>
+                <padding>
+                    <Insets bottom="20.0"/>
+                </padding>
+                <Label minWidth="-Infinity" text="Building Type">
+                    <GridPane.margin>
+                        <Insets right="20.0"/>
+                    </GridPane.margin>
+                </Label>
+                <ComboBox fx:id="buildingTypeComboBox" prefWidth="150.0" GridPane.columnIndex="1"/>
+                <Label minWidth="-Infinity" text="Number of Bedroom" GridPane.rowIndex="1">
+                    <GridPane.margin>
+                        <Insets right="20.0"/>
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="numberBedroomsField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                <Label minWidth="-Infinity" text="Number of Bathroom" GridPane.rowIndex="2">
+                    <GridPane.margin>
+                        <Insets right="20.0"/>
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="numberBathroomsField" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                <Label minWidth="-Infinity" text="Year Built" GridPane.rowIndex="3">
+                    <GridPane.margin>
+                        <Insets right="20.0"/>
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="yearBuiltField" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                <Label minWidth="-Infinity" text="Current Value" GridPane.rowIndex="4">
+                    <GridPane.margin>
+                        <Insets right="20.0"/>
+                    </GridPane.margin>
+                </Label>
+                <TextField fx:id="currentValueField" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                <Label minWidth="-Infinity" text="Address" GridPane.rowIndex="5"/>
+                <TextArea fx:id="addressField" prefHeight="82.0" prefWidth="200.0" GridPane.columnIndex="1"
+                          GridPane.rowIndex="5"/>
+            </GridPane>
+        </VBox>
+    </content>
+    <header>
+        <GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="ALWAYS"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="ALWAYS"/>
+            </rowConstraints>
+            <padding>
+                <Insets bottom="20.0" top="20.0"/>
+            </padding>
+            <Label alignment="CENTER" contentDisplay="CENTER" minWidth="-Infinity" text="Add Property"
+                   GridPane.halignment="CENTER">
+                <font>
+                    <Font size="19.0"/>
+                </font>
+                <GridPane.margin>
+                    <Insets/>
+                </GridPane.margin>
+            </Label>
+        </GridPane>
+    </header>
+    <ButtonType fx:constant="OK"/>
+    <ButtonType fx:constant="CANCEL"/>
+</DialogPane>
